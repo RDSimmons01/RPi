@@ -1,10 +1,10 @@
-const five = require("johnny-five");
-const board = new five.Board();
+var five = require("johnny-five");
+var board = new five.Board();
 
 board.on("ready", function() {
 
     // Create a new `motion` hardware instance.
-    const motion = new five.IR.Motion(11);
+    var motion = new five.IR.Motion(11);
 
     // "calibrated" occurs once, at the beginning of a session,
     motion.on("calibrated", function() {
