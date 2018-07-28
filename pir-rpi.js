@@ -1,18 +1,14 @@
-const Gpio = require('onoff').Gpio,
-    sensor = new Gpio(17, 'in', 'both');    //#A
+const Sensor = require('pi-pir-sensor');
+const sensor = new Sensor({
+    // pin number must be specified
+    pin: 11,
 
-sensor.watch(function (err, value) { //#B
-    if (err) exit(err);
-    console.log(value ? 'there is someone!' : 'not anymore!');
+    // loop time to check PIR sensor, defaults to 1.5 seconds
+    loop: 1500
 });
 
-function exit(err) {
-    if (err) console.log('An error occurred: ' + err);
-    sensor.unexport();
-    console.log('Bye, bye!')
-    process.exit();
-}
-process.on('SIGINT', exit);
+sensor.on('movement', function () {
+    // who's there?
+});
 
-// #A Initialize pin 17 in input mode, 'both' means we want to handle both rising and falling interrupt edges
-// #B Listen for state changes on pin 17, if a change is detected the anonymous callback function will be called with the new value
+sensor.start();
