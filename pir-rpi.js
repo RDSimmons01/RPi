@@ -4,7 +4,7 @@ const board = new five.Board();
 board.on("ready", function() {
 
     // Create a new `motion` hardware instance.
-    const motion = new five.IR.Motion(7);
+    const motion = new five.IR.Motion(11);
 
     // "calibrated" occurs once, at the beginning of a session,
     motion.on("calibrated", function() {
