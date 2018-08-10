@@ -1,7 +1,7 @@
 {
-  "RPi-1": {
-    "name": "RPi One IoT",
-    "description": "Raspberry Pi 3+ Edge Device One",
+  "RPi": {
+    "name": "RPi IoT",
+    "description": "Raspberry Pi 3+ Edge Device",
     "port": 8484,
     "sensors": {
       "temperature": {
@@ -27,13 +27,13 @@
     },
     "actuators": {
       "leds": {
-        "1": {
-          "name": "LED 1",
+        "green": {
+          "name": "GREEN LED",
           "value": false,
           "gpio": 4
         },
-        "2": {
-          "name": "LED 2",
+        "red": {
+          "name": "RED LED",
           "value": false,
           "gpio": 9
         }
